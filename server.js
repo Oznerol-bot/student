@@ -92,6 +92,7 @@ async function startServer() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log('✅ Connected to MongoDB Atlas');
+    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
   } catch (err) {
     console.error('❌ Failed to connect:', err.message);
   }
